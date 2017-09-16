@@ -34,6 +34,6 @@ adSchema.statics.list = function(filter, limit){
 
 // Create the model
 
-const Ad = mongoose.model('Agente', adSchema);
+const Ad = mongoose.model('Ad', adSchema);
 
 module.exports = Ad;
