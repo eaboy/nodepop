@@ -9,7 +9,7 @@ const adSchema = mongoose.Schema({
         type: String,
         index: true 
     },
-    onSell: {
+    onSale: {
         type: Boolean,
         index: true 
     },
@@ -26,7 +26,7 @@ const adSchema = mongoose.Schema({
 
 
 adSchema.statics.list = function(filter, limit){
-
+    console.log(filter);
     const query = Ad.find(filter);
     query.limit(limit);
     return query.exec(); // Execute the query

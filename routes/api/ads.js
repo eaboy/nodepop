@@ -12,17 +12,46 @@ const Ad = require('../../models/Ad');
 router.get('/', (req, res, next) => {
 
     const name = req.query.name;
-    const tag = req.query.tag;
+    const tags = req.query.tags;
+    const onSale = req.query.onSale;
+    const price = req.query.price;
     const limit = parseInt(req.query.limit);
 
     const filter = {};
 
     if(name) {
-        filter.name = name;
+        filter.name = new RegExp('^' + name, 'i');
     }
     
-    if(tag) {
-        filter.tag = tag;
+    if(tags) {
+        filter.tags = { $in: tags.split(',')};
+    }
+
+    if(onSale) {
+        filter.onSale = isTrue(onSale);
+    }
+
+    if(price) {
+        const priceArray = price.split('-');
+        if(priceArray.length === 1) {
+            filter.price = parseInt(priceArray[0]);
+        } else {
+            filter.price = {};
+            if(priceArray[0] !== '') {
+                filter.price.$gte = parseInt(priceArray[0]);
+            }
+            if(priceArray[1] !== '') {
+                filter.price.$lte = parseInt(priceArray[1]);
+            }
+        }
+    }
+
+    function isTrue(value) {
+        switch(onSale.toLowerCase()){
+            case 'true': return true;
+            case 'false': return false;
+            default: return;
+        }
     }
 
     // recupera una lista de agentes
