@@ -16,17 +16,14 @@ var readJson = function() {
     });
 };
 
-client.connect('mongodb://localhost/nodepopdb', (err, db) => {
-    if (err){
-        console.log('Connection lo MongoDB falied', err);
-    }
-    db.dropDatabase()
+client.connect('mongodb://localhost/nodepopdb')
+    .then( db => {
+        return db.dropDatabase()
         .then(readJson)
         .then(data => {
             return db.collection('ads').insertMany(data);
-        })
-        .then()
-        .catch(err => {
-            console.log('Error', err);
         });
-});
+    })
+    .catch(err => {
+        console.log('Error', err);
+    });
