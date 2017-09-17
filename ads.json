@@ -1,0 +1,99 @@
+{
+    "ads": [
+        {
+            "name" : "MacBook",
+            "onSale" : true,
+            "price" : 750,
+            "image" : "macbook.jpg",
+            "tags" : [ 
+                "work", 
+                "lifestile"
+            ]
+        },
+        {
+            "name" : "Bicycle",
+            "onSale" : true,
+            "price" : 230.15,
+            "image" : "bicycle.jpg",
+            "tags" : [ 
+                "lifestyle", 
+                "motor"
+            ]
+        },
+        {
+            "name" : "iPhone 3GS",
+            "onSale" : false,
+            "price" : 50,
+            "image" : "iphone.jpg",
+            "tags" : [ 
+                "lifestyle", 
+                "mobile"
+            ]
+        },
+        {
+            "name" : "iPhone 4S",
+            "onSale" : true,
+            "price" : 200,
+            "image" : "iphone4s.jpg",
+            "tags" : [ 
+                "lifestyle", 
+                "mobile"
+            ]
+        },
+        {
+            "name" : "Sneakers",
+            "onSale" : true,
+            "price" : 35,
+            "image" : "sneakers.jpg",
+            "tags" : [ 
+                "lifestyle"
+            ]
+        },
+        {
+            "name" : "The Matrix DVD",
+            "onSale" : false,
+            "price" : 40,
+            "image" : "matrix.jpg",
+            "tags" : [ 
+                "lifestyle"
+            ]
+        },
+        {
+            "name" : "Motorcycle",
+            "onSale" : true,
+            "price" : 1750,
+            "image" : "motorcycle.jpg",
+            "tags" : [ 
+                "lifestyle",
+                "motor"
+            ]
+        },
+        {
+            "name" : "Pc",
+            "onSale" : true,
+            "price" : 345,
+            "image" : "computer.jpg",
+            "tags" : [ 
+                "work"
+            ]
+        },
+        {
+            "name" : "Laptop",
+            "onSale" : false,
+            "price" : 450,
+            "image" : "laptop.jpg",
+            "tags" : [ 
+                "work"
+            ]
+        },
+        {
+            "name" : "Sofa",
+            "onSale" : true,
+            "price" : 200,
+            "image" : "sofa.jpg",
+            "tags" : [ 
+                "lifestyle"
+            ]
+        }
+    ]
+}
