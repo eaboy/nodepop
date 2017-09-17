@@ -41,10 +41,20 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
+  
+  res.status(err.status || 500);
+
+  if (isAPI(req)) {
+    res.json({ success: false, error: err.message });
+    return;
+  }  
 
   // render the error page
-  res.status(err.status || 500);
   res.render('error');
 });
+
+function isAPI(req) {
+  return req.originalUrl.indexOf('/api') === 0;
+}
 
 module.exports = app;
