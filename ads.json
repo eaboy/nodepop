@@ -1,4 +1,18 @@
 {
+    "tags": [
+        {
+            "name": "work"
+        },
+        {
+            "name":"lifestile"
+        },
+        {
+            "name": "mobile"
+        },
+        {
+            "name": "motor"
+        }
+    ],
     "ads": [
         {
             "name" : "MacBook",

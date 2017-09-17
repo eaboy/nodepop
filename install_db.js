@@ -10,7 +10,7 @@ var readJson = function() {
                 reject(err);
             } else {
                 const jsonAds = JSON.parse(data);
-                resolve (jsonAds.ads);
+                resolve (jsonAds);
             }
         });
     });
@@ -21,7 +21,10 @@ client.connect('mongodb://localhost/nodepopdb')
         return db.dropDatabase()
         .then(readJson)
         .then(data => {
-            return db.collection('ads').insertMany(data);
+            return db.collection('ads').insertMany(data.ads)
+            .then( () => {
+                return db.collection('tags').insertMany(data.tags);
+            });
         });
     })
     .catch(err => {
