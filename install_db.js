@@ -27,6 +27,10 @@ client.connect('mongodb://localhost/nodepopdb')
             });
         });
     })
+    .then(() => {
+        console.log('Database initialized correctly')
+        process.exit();
+    })
     .catch(err => {
         console.log('Error', err);
     });
