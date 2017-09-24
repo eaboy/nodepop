@@ -11,23 +11,23 @@ const Tag = require('../../models/Tag');
 // GET /
 router.get('/', (req, res, next) => {
 
-    const name = req.query.name;
+	const name = req.query.name;
     
-        const filter = {};
+	const filter = {};
 
-    if(name) {
-        filter.name = new RegExp('^' + name, 'i');
-    }
+	if(name) {
+		filter.name = new RegExp('^' + name, 'i');
+	}
 
-    // recupera una lista de agentes
+	// recupera una lista de agentes
 
-    Tag.list(filter).then(list => { 
-        res.json({ success: true, rows: list});
-    }).catch( err => {
-        console.log('Error', err);
-        next(err); 
-        return;
-    });
+	Tag.list(filter).then(list => { 
+		res.json({ success: true, rows: list});
+	}).catch( err => {
+		console.log('Error', err);
+		next(err); 
+		return;
+	});
     
 });
 

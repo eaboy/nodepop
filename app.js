@@ -6,16 +6,16 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var i18n = require("i18n");
+var i18n = require('i18n');
 var customErrors = require('./lib/customErrors');
 
 var app = express();
 
 const i18nOptions = {
-  directory: './locals',
-  defaultLocale: 'en',
-  queryParameter: 'lang',
-  register: global
+	directory: './locals',
+	defaultLocale: 'en',
+	queryParameter: 'lang',
+	register: global
 };
 
 i18n.configure(i18nOptions);
@@ -43,32 +43,32 @@ app.use('/api/tags', require('./routes/api/tags'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error();
-  err.status = 404;
-  next(err);
+	var err = new Error();
+	err.status = 404;
+	next(err);
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  customErrors(err);
+	customErrors(err);
   
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+	// set locals, only providing error in development
+	res.locals.message = err.message;
+	res.locals.error = req.app.get('env') === 'development' ? err : {};
   
-  res.status(err.status || 500);
+	res.status(err.status || 500);
 
-  if (isAPI(req)) {
-    res.json({ success: false, error: err.message });
-    return;
-  }  
+	if (isAPI(req)) {
+		res.json({ success: false, error: err.message });
+		return;
+	}  
 
-  // render the error page
-  res.render('error');
+	// render the error page
+	res.render('error');
 });
 
 function isAPI(req) {
-  return req.originalUrl.indexOf('/api') === 0;
+	return req.originalUrl.indexOf('/api') === 0;
 }
 
 module.exports = app;
