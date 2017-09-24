@@ -32,6 +32,35 @@ function renderAd(ad) {
 			</div>`;
 }
 
+function getFilter(element) {
+	let filter = '?';
+	let price = '';
+	let tags = '';
+	$(element).serializeArray().forEach((item) => {
+		if(item.value){
+			if(item.name === 'priceFrom') {
+				price += `${item.value}-`;
+			} else if (item.name === 'priceTo') {
+				price = price.slice(0, -1);
+				price += `-${item.value}`;			
+			} else if (item.name === 'tags') {
+				tags += `${item.value},`;
+			} else {
+				filter += `${item.name}=${item.value}&`;
+			}
+		}
+	});
+	if(price) {
+		filter += `price=${price}&`;
+	}
+	if(tags){
+		tags = tags.slice(0, -1);
+		filter += `tags=${tags}&`;
+	}
+	filter = filter.slice(0, -1);
+	return filter;
+}
+
 getData('ads', ads => {
 	renderData(ads.rows);
 }, error => {
@@ -39,12 +68,7 @@ getData('ads', ads => {
 });
 
 $('#filters').submit(function() {
-	let filter = '?';
-	$(this).serializeArray().forEach((item) => {
-		filter += `${item.name}=${item.value}&`;
-	});
-	filter = filter.slice(0, -1);
-	console.log(filter);
+	const filter = getFilter(this);
 	getData('ads', ads => {
 		renderData(ads.rows);
 	}, error => {
