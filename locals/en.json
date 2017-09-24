@@ -1,3 +1,7 @@
 {
-    "NOT_FOUND" : "Not found"
+	"NOT_FOUND": "Not found. ",
+	"NOT_A_NUMBER": "The '%s' must be a number. ",
+    "FIELD_REQUIRED": "Field '%s' is required. ",
+    "NOT_VALID" : "'{{value}}' is not a valid value for field '{{field}}'. ",
+    "NOT_VALID_ID": "'%s' is not a valid id. "
 }

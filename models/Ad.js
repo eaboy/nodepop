@@ -7,26 +7,31 @@ const mongoose = require('mongoose');
 const adSchema = mongoose.Schema({
     name: {
         type: String,
-        index: true 
+        index: true ,
+        required: true
     },
     onSale: {
         type: Boolean,
-        index: true 
+        index: true,
+        required: true
     },
     price: {
         type: Number,
-        index: true 
+        index: true,
+        required: true
     },
-    image: String,
-    tags: {
-        type: [String],
-        index: true 
-    }
+    image: {
+        type: String
+    },
+    tags: [{
+        type: String,
+        enum: ['work', 'lifestyle', 'motor', 'mobile'],
+        index: true
+    }]
 });
 
 
 adSchema.statics.list = function(filter, limit){
-    console.log(filter);
     const query = Ad.find(filter);
     query.limit(limit);
     return query.exec(); // Execute the query
