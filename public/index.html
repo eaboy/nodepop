@@ -12,11 +12,25 @@
     <div class="filters">
         <h3>Filters</h3>
         <form id="filters">
-            <label for="name">Name:</label>
-            <input type="text" name="name" id="name">
-            <label for="onSale">Status:</label>
-            <input type="radio" name="onSale" id="onSale" value="true"> On sale
-            <input type="radio" name="onSale" id="onSale" value="false"> Searching
+            <div class="input-container">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name">
+                <label for="onSale">Status: </label>
+                <input type="radio" name="onSale" id="onSale" value="true"> On sale
+                <input type="radio" name="onSale" id="onSale" value="false"> Searching
+            </div>
+            <div class="input-container">
+                <label for="priceFrom">Price from: </label>
+                <input type="number" name="priceFrom" min="0">
+                <label for="priceTo"> To: </label>
+                <input type="number" name="priceTo" min="0">
+                <label for="tags">Tags: </label>               
+                <input type="checkbox" name="tags" value="lifestyle">Lifestyle
+                <input type="checkbox" name="tags" value="mobile">Mobile
+                <input type="checkbox" name="tags" value="motor">Motor
+                <input type="checkbox" name="tags" value="work">Work
+            </div>
+            <button type="submit">Apply filters</button>
         </form>
     </div>
     <div class="container">
