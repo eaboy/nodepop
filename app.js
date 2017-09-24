@@ -7,6 +7,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var i18n = require("i18n");
+var customErrors = require('./lib/customErrors');
 
 var app = express();
 
@@ -42,13 +43,15 @@ app.use('/api/tags', require('./routes/api/tags'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error(__('NOT_FOUND'));
+  var err = new Error();
   err.status = 404;
   next(err);
 });
 
 // error handler
 app.use(function(err, req, res, next) {
+  customErrors(err);
+  
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

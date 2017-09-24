@@ -59,7 +59,6 @@ router.get('/', (req, res, next) => {
     Ad.list(filter, limit).then(list => { 
         res.json({ success: true, rows: list});
     }).catch( err => {
-        console.log('Error', err);
         next(err); 
         return;
     });
@@ -75,7 +74,6 @@ router.get('/:id', (req, res, next) => {
 
     Ad.findOne({ _id: _id }, (err, ad) => {
         if(err){
-            console.log('Error', err);
             next(err);
             return;
         }
@@ -92,8 +90,7 @@ router.post('/', (req, res, next) => {
     console.log(req.body);
     const ad = new Ad(req.body);
     ad.save((err, savedAd) => {
-        if(err) {
-            console.log('Error', err);
+        if(err) {            
             next(err);
             return;
         }
@@ -110,7 +107,6 @@ router.put('/:id', (req, res, next) => {
     const _id = req.params.id;
     Ad.findOneAndUpdate({_id: _id}, req.body, {new:true}, (err, updatedAd) => { 
         if(err) {
-            console.log('Error', err);
             next(err);
             return;
         }
@@ -127,7 +123,6 @@ router.delete('/:id', (req, res, next) => {
     const _id = req.params.id;
     Ad.remove({_id: _id}, (err) => { 
         if(err) {
-            console.log('Error', err);
             next(err);
             return;
         }
