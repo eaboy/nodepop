@@ -37,8 +37,19 @@ adSchema.statics.list = function(filter, limit){
 	return query.exec(); // Execute the query
 };
 
+adSchema.statics.isTrue = function (onSale) {
+	switch(onSale.toLowerCase()){
+	case 'true': return true;
+	case 'false': return false;
+	default: return;
+	}
+};
+
+
+
+
 // Create the model
 
-const Ad = mongoose.model('Ad', adSchema);
+var Ad = mongoose.model('Ad', adSchema);
 
 module.exports = Ad;

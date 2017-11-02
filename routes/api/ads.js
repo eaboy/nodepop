@@ -28,7 +28,7 @@ router.get('/', (req, res, next) => {
 	}
 
 	if(onSale) {
-		filter.onSale = isTrue(onSale);
+		filter.onSale = Ad.isTrue(onSale);
 	}
 
 	if(price) {
@@ -43,14 +43,6 @@ router.get('/', (req, res, next) => {
 			if(priceArray[1] !== '') {
 				filter.price.$lte = parseInt(priceArray[1]);
 			}
-		}
-	}
-
-	function isTrue(value) {
-		switch(onSale.toLowerCase()){
-		case 'true': return true;
-		case 'false': return false;
-		default: return;
 		}
 	}
 
