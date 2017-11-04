@@ -8,29 +8,30 @@
     <link rel='stylesheet' href='/style/style.css' />
 </head>
 <body>
+    <div class="lang-selector"></div>
     <h1>Nodepop</h1>
     <div class="filters">
-        <h3>Filters</h3>
+        <h3 data-i18n="home.filters"></h3>
         <form id="filters">
             <div class="input-container">
-                <label for="name">Name: </label>
+                <label for="name" data-i18n="home.name"> </label>
                 <input type="text" name="name" id="name">
-                <label for="onSale">Status: </label>
-                <input type="radio" name="onSale" id="onSale" value="true"> On sale
-                <input type="radio" name="onSale" id="onSale" value="false"> Searching
+                <label for="onSale" data-i18n="home.status"> </label>
+                <input type="radio" name="onSale" id="onSale" value="true"><span data-i18n="home.onsale"></span>
+                <input type="radio" name="onSale" id="onSale" value="false"><span data-i18n="home.searching"></span>
             </div>
             <div class="input-container">
-                <label for="priceFrom">Price from: </label>
+                <label for="priceFrom" data-i18n="home.priceFrom"> </label>
                 <input type="number" name="priceFrom" min="0">
-                <label for="priceTo"> To: </label>
+                <label for="priceTo" data-i18n="home.to"> </label>
                 <input type="number" name="priceTo" min="0">
-                <label for="tags">Tags: </label>               
-                <input type="checkbox" name="tags" value="lifestyle">Lifestyle
-                <input type="checkbox" name="tags" value="mobile">Mobile
-                <input type="checkbox" name="tags" value="motor">Motor
-                <input type="checkbox" name="tags" value="work">Work
+                <label for="tags" data-i18n="home.tags"> </label>               
+                <input type="checkbox" name="tags" value="lifestyle"><span data-i18n="home.lifestyle"></span>
+                <input type="checkbox" name="tags" value="mobile"><span data-i18n="home.mobile"></span>
+                <input type="checkbox" name="tags" value="motor"><span data-i18n="home.motor"></span>
+                <input type="checkbox" name="tags" value="work"><span data-i18n="home.work"></span>
             </div>
-            <button type="submit">Apply filters</button>
+            <button type="submit" data-i18n="home.applyFilters"></button>
         </form>
     </div>
     <div class="container">
@@ -38,5 +39,8 @@
     </div>
 </body>
 <script src="./js/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/8.1.0/i18next.min.js" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.0/jquery-i18next.min.js" ></script>
 <script src="./js/main.js"></script>
+<script src="./js/i18n.js"></script>
 </html>

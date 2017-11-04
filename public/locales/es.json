@@ -1,0 +1,20 @@
+{
+	"translation": {
+		"home": {
+			"filters": "Filtros",
+			"name": "Nombre",
+            "status": "Estado",
+            "onsale": "En venta",
+            "searching": "Buscando",
+            "priceFrom": "Precio desde",
+            "to": "Hasta",
+            "tags": "Etiquetas",
+            "lifestyle": "Estilo de vida",
+            "mobile": "Móvil",
+            "motor": "Motor",
+            "work": "Trabajo",
+			"applyFilters": "Aplicar filtros",
+			"price": "Precio"
+		}
+	}
+}

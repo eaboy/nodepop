@@ -1,0 +1,20 @@
+{
+	"translation": {
+		"home": {
+            "filters": "Filters",
+            "name": "Name",
+            "status": "Status",
+            "onsale": "On sale",
+            "searching": "Searching",
+            "priceFrom": "Price from",
+            "to": "To",
+            "tags": "Tags",
+            "lifestyle": "Lifestyle",
+            "mobile": "Mobile",
+            "motor": "Motor",
+            "work": "Work",
+            "applyFilters": "Apply filters",
+            "price": "Price"
+		}
+	}
+}

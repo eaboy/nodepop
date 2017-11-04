@@ -2,7 +2,7 @@ const container = $('.container');
 
 function getData(resource, successCallback, errorCallback, filter) {
 	$.ajax({
-		url: 'http://localhost:3000/api/'+resource+(filter || ''),
+		url: '../api/'+resource+(filter || ''),
 		method: 'get',
 		success: successCallback,
 		error: errorCallback
@@ -17,17 +17,25 @@ function renderData(ads) {
 	container.html(html);
 }
 
+function i18nTags(tags){
+	let tagsHtml = '';
+	tags.forEach(tag => {
+		tagsHtml += `<span data-i18n="home.${tag}"></span>, `;
+	});
+	return tagsHtml.slice(0, tagsHtml.length - 2);
+}
+
 function renderAd(ad) {
-	const status = ad.onSale ? 'On sale' : 'Searching';
+	const status = ad.onSale ? 'onsale' : 'searching';
 	return `<div class="ad">
 				<div class="image">
 					<img src="images/${ad.image}" alt="" class="src">
 				</div>
 				<div class="info">
-					<p class="name">Name: ${ad.name}</p>
-					<p status">Status: ${status}</p>
-					<p class="price">Price: ${ad.price} €</p>
-					<p class="tags">Tags: ${ad.tags}</p>
+					<p class="name"><span data-i18n="home.name"></span>: ${ad.name}</p>
+					<p class="status"><span data-i18n="home.status"></span>: <span data-i18n="home.${status}"></span></p>
+					<p class="price"><span data-i18n="home.price"></span>: ${ad.price} €</p>
+					<p class="tags"><span data-i18n="home.tags"></span>: ${i18nTags(ad.tags)}</p>
 				</div>
 			</div>`;
 }
@@ -71,6 +79,8 @@ $('#filters').submit(function() {
 	const filter = getFilter(this);
 	getData('ads', ads => {
 		renderData(ads.rows);
+        $('.filters').localize();
+        $('.container').localize();
 	}, error => {
 		console.log(error);
 	}, filter);

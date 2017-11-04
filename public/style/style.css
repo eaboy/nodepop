@@ -34,3 +34,18 @@ button {
   border: none;
   border-radius: 3px;
 }
+
+.lang-selector{
+  float: right;
+}
+
+.lang {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.lang.active-lang {
+  pointer-events: none;
+  cursor: default;
+  color: lightgrey;
+}
