@@ -49,3 +49,41 @@ button {
   cursor: default;
   color: lightgrey;
 }
+
+.login-container {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.9);
+}
+
+.login {
+  position: absolute;
+  top: calc(50vh - 100px);
+  left: calc(50vw - 100px);
+  height: 200px;
+  width: 200px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.login > form{
+  padding: 10px;
+}
+
+.login > form > label {
+  margin-left: 0;
+}
+
+.login > form > input {
+  margin: 5px 0;
+}
+
+.message {
+  padding: 0 10px;
+  margin-top: -10px;
+  color: red;
+}
