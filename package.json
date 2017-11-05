@@ -23,6 +23,7 @@
   "devDependencies": {
     "eslint": "^4.7.2",
     "mocha": "^4.0.1",
+    "mockgoose": "^7.3.3",
     "supertest": "^3.0.0"
   }
 }

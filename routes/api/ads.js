@@ -46,7 +46,7 @@ router.get('/', (req, res, next) => {
 		}
 	}
 
-	// recupera una lista de agentes
+	// recupera una lista de anuncios
 
 	Ad.list(filter, limit).then(list => { 
 		res.json({ success: true, rows: list});

@@ -4,22 +4,32 @@ const app = require('../app');
 
 describe('Home API', function () {
 
-  let home;
+  let agent;
 
   before(function(){
-    home = request(app);
+    agent = request(app);
+  });
+
+  after(function(){
+    app
   });
 
   it('GET / -> Responds with 200 status', function (done) {
-    home
+    agent
       .get('/')
       .expect(200, done);
   });
 
-  it('GET /api -> Responds with 404 status', function (done) {
-    home
+  it('GET /api -> Responds with 404 status and { success: false, error: "Not found. " }', function (done) {
+    agent
       .get('/api')
-      .expect(404, done);
+      .expect(404, { success: false, error: 'Not found. ' }, done);
+  });
+
+  it('GET /api?lang=es -> Responds with 404 status and { success: false, error: "No se encuentra. " }', function (done) {
+    agent
+      .get('/api?lang=es')
+      .expect(404, { success: false, error: 'No se encuentra. ' }, done);
   });
 
 });
