@@ -77,6 +77,9 @@ getData('ads', ads => {
 	renderData(ads.rows);
 }, error => {
 	console.log(error);
+	if(error.status === 401){
+		$('.login-container').show();
+	}
 });
 
 $('#filters').submit(function() {

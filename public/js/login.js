@@ -12,6 +12,7 @@ function login(email, password){
 		success: (data) => {
 			if(data.success){
                 loginForm.reset();
+                hideLoginForm();
 				saveToken(data.token);
 			} else {
                 loginForm[1].value = '';
@@ -19,6 +20,10 @@ function login(email, password){
 			}
 		}
 	})
+}
+
+function hideLoginForm(){
+    $('.login-container').hide();
 }
 
 function saveToken(token){
