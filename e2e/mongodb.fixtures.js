@@ -3,6 +3,7 @@
 const mongoose = require('mongoose');
 const Ad = require('../models/Ad');
 const Tag = require('../models/Tag');
+const User = require('../models/User');
 
 module.exports.initAds = async function(){
     await Ad.deleteMany();
@@ -25,6 +26,16 @@ module.exports.initTags = async function(){
     await Tag.insertMany([
         {
             name : 'work'
+        }
+    ]);
+};
+
+module.exports.initUsers = async function(){
+    await User.deleteMany();
+    await User.insertMany([
+        {
+            email : 'user@example.com',
+            password: User.hashPassword('1234')
         }
     ]);
 };
