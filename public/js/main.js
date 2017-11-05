@@ -1,11 +1,15 @@
 const container = $('.container');
 
 function getData(resource, successCallback, errorCallback, filter) {
+	const token = localStorage.getItem('token') || '';
 	$.ajax({
 		url: '../api/'+resource+(filter || ''),
 		method: 'get',
 		success: successCallback,
-		error: errorCallback
+		error: errorCallback,
+		data: {
+			token
+		}
 	});
 }
 

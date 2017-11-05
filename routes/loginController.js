@@ -31,7 +31,7 @@ class LoginController {
             }
 
             // respondemos con un JWT
-            res.json({ ok: true, token: token});
+            res.json({ success: true, token: token});
 
         });
 

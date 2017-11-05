@@ -13,6 +13,7 @@ $.getJSON(`../locales/${lang}.json`, data => {
         jqueryI18next.init(i18next, $);
         $('.filters').localize();
         $('.container').localize();
+        $('.login').localize();
     });
 });
 

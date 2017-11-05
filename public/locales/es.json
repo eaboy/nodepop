@@ -15,6 +15,13 @@
             "work": "Trabajo",
 			"applyFilters": "Aplicar filtros",
 			"price": "Precio"
-		}
+        },
+        "login": {
+            "email": "Email",
+            "password": "Contraseña",
+            "login": "Entrar",
+            "emailPlaceholder": "Introduce tu email",
+            "passPlaceholder": "Introduce tu contraseña"
+        }
 	}
 }

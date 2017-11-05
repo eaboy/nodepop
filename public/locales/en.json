@@ -1,6 +1,6 @@
 {
-	"translation": {
-		"home": {
+    "translation": {
+        "home": {
             "filters": "Filters",
             "name": "Name",
             "status": "Status",
@@ -15,6 +15,13 @@
             "work": "Work",
             "applyFilters": "Apply filters",
             "price": "Price"
-		}
-	}
+        },
+        "login": {
+            "email": "Email",
+            "password": "Password",
+            "login": "Login",
+            "emailPlaceholder": "Enter Email",
+            "passPlaceholder": "Enter Password"
+        }
+    }
 }

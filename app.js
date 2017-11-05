@@ -50,7 +50,7 @@ app.use('/api/tags', require('./routes/api/tags'));
 const loginController = require('./routes/loginController');
 
 // Usamos las rutas de un controlador
-app.post('/loginjwt', loginController.postLoginJWT);
+app.post('/api/authenticate', loginController.postLoginJWT);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

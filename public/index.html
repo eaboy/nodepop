@@ -37,10 +37,25 @@
     <div class="container">
         
     </div>
+    <div class="login-container">
+        <div class="login">
+            <form id="login-form">
+                <label for="email"><b data-i18n="login.email"></b></label>
+                <input type="text" data-i18n="[placeholder]login.emailPlaceholder" name="email" id="email" required>
+            
+                <label for="password"><b data-i18n="login.password"></b></label>
+                <input type="password" data-i18n="[placeholder]login.passPlaceholder" name="password" id="password" required>
+            
+                <button type="submit" data-i18n="login.login"></button>
+            </form>
+            <div class="message"></div>
+        </div>
+    </div>
 </body>
 <script src="./js/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/8.1.0/i18next.min.js" ></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.0/jquery-i18next.min.js" ></script>
 <script src="./js/main.js"></script>
+<script src="./js/login.js"></script>
 <script src="./js/i18n.js"></script>
 </html>
