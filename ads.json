@@ -109,5 +109,12 @@
                 "lifestyle"
             ]
         }
+    ],
+    "users": [
+        {
+            "name": "User",
+            "email": "user@example.com",
+            "password": "1234"
+        }
     ]
 }

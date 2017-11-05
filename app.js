@@ -8,6 +8,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var i18n = require('i18n');
 var customErrors = require('./lib/customErrors');
+const jwtAuth = require('./lib/jwtAuth');
+
+require('dotenv').config();
 
 var app = express();
 
@@ -28,6 +31,7 @@ app.set('view engine', 'ejs');
 require('./lib/connectMongoose');
 require('./models/Ad');
 require('./models/Tag');
+require('./models/User');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -40,8 +44,13 @@ app.use(cookieParser());
 app.use(i18n.init);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/ads', require('./routes/api/ads'));
+app.use('/api/ads', jwtAuth(), require('./routes/api/ads'));
 app.use('/api/tags', require('./routes/api/tags'));
+
+const loginController = require('./routes/loginController');
+
+// Usamos las rutas de un controlador
+app.post('/loginjwt', loginController.postLoginJWT);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

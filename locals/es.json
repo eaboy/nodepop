@@ -1,7 +1,10 @@
 {
-    "NOT_FOUND" : "No se encuentra. ",
-    "NOT_A_NUMBER" : "El atributo '%s' debe ser un número. ",
-    "FIELD_REQUIRED" : "El campo '%s' es obligatorio. ",
-    "NOT_VALID" : "'{{value}}' no es un valor válido para el campo '{{field}}'. ",
-    "NOT_VALID_ID" : "'%s' no es un id válido. "
+	"NOT_FOUND": "No se encuentra. ",
+	"NOT_A_NUMBER": "El atributo '%s' debe ser un número. ",
+	"FIELD_REQUIRED": "El campo '%s' es obligatorio. ",
+	"NOT_VALID": "'{{value}}' no es un valor válido para el campo '{{field}}'. ",
+	"NOT_VALID_ID": "'%s' no es un id válido. ",
+	"NO_TOKEN_PROVIDED": "No autorizado. No se ha proporcionado token",
+	"INVALID_TOKEN": "No autorizado. Token inválido",
+	"INVALID_CREDENTIALS": "No autorizado. Credenciales inválidas"
 }
