@@ -10,6 +10,10 @@ It require a mongodb server running on localhost listening on default port `2701
 
 Run `npm run initdb` to initialize mongo database.
 
+## Test
+
+Use `npm run e2e` to run end2end tests.
+
 ## API
 
 The API accepts two routes, one for ads `/api/ads` and other for the tags `/api/tags`.
