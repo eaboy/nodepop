@@ -2,6 +2,10 @@
 
 Project to learn and practice NodeJS, Express and MongoDB. It simulates an API for a ads app.
 
+## Demo
+
+A demo can be found at https://eduardoaboy.com deployed on an AWS server for practical purposes. Use `user@example.com` and `1234` as password to login.
+
 ## Build & development
 
 Use `npm install` to install all dependencies.
